@@ -109,7 +109,6 @@ header {
 		background-color: @color3;
 		top: 336px;
 		position: absolute;
-		padding: 82px 0 0 25px;
 		box-sizing: border-box;
 
 		.adapt (sm, {
@@ -119,7 +118,15 @@ header {
 		.adapt (xs, {
 			top: 60px;
 		});
-
+		
+		.welcomeWrap {
+			width: 87%;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		
 		p {
 			font-family: @font1;
 			font-size: 18px;
@@ -145,9 +152,7 @@ header {
 		right: 109px;
 		width: 313px;
 		height: 168px;
-		margin: 0;
-		padding: 0;
-
+		
 		.adapt (xs, {
 			top: 380px;
 			left: 25px;
@@ -187,7 +192,7 @@ header {
 		position: absolute;
 		top: 474px;
 		right: 295px;
-
+		
 		.adapt (xs, {
 			top: 568px;
 			left: 25px;
@@ -196,6 +201,7 @@ header {
 		&:hover {
 			color: @color3;
 			background-color: @color1;
+			cursor: pointer;
 		}
 	}
 }
@@ -226,7 +232,6 @@ main {
 				flex-direction: column;
 
 				li {
-					padding: 0 0 0 40px;
 					height: 36px;
 					text-transform: uppercase;
 					box-sizing: border-box;
@@ -255,6 +260,9 @@ main {
 					}
 
 					a {
+						display: block;
+						width: 100%;
+						padding: 0 0 0 40px;
 						text-decoration: none;
 						color: @color1;
 					}
@@ -274,10 +282,7 @@ main {
 			});
 
 			p {
-				margin: 0;
-				padding: 0;
 				width: 109px;
-				height: 97px;
 				font-family: @font1;
 				font-size: 36px;
 				font-weight: 900;

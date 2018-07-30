@@ -69,7 +69,6 @@ header .welcome {
   background-color: #fff51f;
   top: 336px;
   position: absolute;
-  padding: 82px 0 0 25px;
   box-sizing: border-box;
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -81,6 +80,13 @@ header .welcome {
   header .welcome {
     top: 60px;
   }
+}
+header .welcome .welcomeWrap {
+  width: 87%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 header .welcome p {
   font-family: 'Raleway', sans-serif;
@@ -104,8 +110,6 @@ header .title {
   right: 109px;
   width: 313px;
   height: 168px;
-  margin: 0;
-  padding: 0;
 }
 @media (max-width: 767px) {
   header .title {
@@ -154,6 +158,7 @@ header .button {
 header .button:hover {
   color: #fff51f;
   background-color: #000000;
+  cursor: pointer;
 }
 main .aside {
   margin-top: -20px;
@@ -181,7 +186,6 @@ main .aside nav ul {
   flex-direction: column;
 }
 main .aside nav ul li {
-  padding: 0 0 0 40px;
   height: 36px;
   text-transform: uppercase;
   box-sizing: border-box;
@@ -206,6 +210,9 @@ main .aside nav ul li:nth-child(n + 1):hover a {
   color: #ffffff;
 }
 main .aside nav ul li a {
+  display: block;
+  width: 100%;
+  padding: 0 0 0 40px;
   text-decoration: none;
   color: #000000;
 }
@@ -222,10 +229,7 @@ main .aside .banner {
   }
 }
 main .aside .banner p {
-  margin: 0;
-  padding: 0;
   width: 109px;
-  height: 97px;
   font-family: 'Raleway', sans-serif;
   font-size: 36px;
   font-weight: 900;
