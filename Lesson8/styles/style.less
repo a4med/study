@@ -1,0 +1,686 @@
+@font1: 'Raleway', sans-serif;
+@font2: 'Roboto', sans-serif;
+@font3: 'Arial', sans-serif;
+@color1: #000;
+@color2: #fff;
+@color3: #fff51f;
+@colorDark: #333;
+
+@simpleLink: {
+	text-decoration: none;
+	color: @color2;
+};
+
+// modified Bootstrap grid system
+.adapt(@_device, @_styles) {
+  & when (@_device = tiny) {
+    @media (max-width: 575px) { @_styles(); }
+  }
+  & when (@_device = xs) {
+    @media (max-width: 767px) { @_styles(); }
+  }
+  & when (@_device = wxs) {
+    @media (min-width: 576px) and (max-width: 767px) { @_styles(); }
+  }
+  & when (@_device = sm) {
+    @media (min-width: 768px) and (max-width: 991px) { @_styles(); }
+  }
+  & when (@_device = md) {
+    @media (min-width: 992px) and (max-width: 1199px) { @_styles(); }
+  }
+  & when (@_device = lg) {
+    @media (min-width: 1200px) { @_styles(); }
+  }
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+	background: -moz-linear-gradient(top, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
+	background: -webkit-linear-gradient(top, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
+	background: linear-gradient(to bottom, #b3dced 0%, #29b8e5 50%, #bce0ee 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#bce0ee', GradientType=0);
+}
+
+header {
+	background: url("../images/header-background.jpg") no-repeat 50% 50%;
+	width: 100%;
+	height: 700px;
+	
+	.adapt(sm, {
+		height: 600px;
+	});
+	
+	.adapt(xs, {
+		height: 710px;
+	});
+
+
+	.container {
+		height: inherit;
+		position: relative;
+	}
+
+	.xsmenu {
+		font-family: @font1;
+
+		.navbar-brand {
+			background: url(../images/surfhouse_logo_without_text.png)no-repeat;
+			background-size: contain;
+			padding-left: 50px;
+			font-weight: bold;
+		}
+	}
+
+	.logo {
+		width: 125px;
+		height: 111px;
+		position: absolute;
+		top: 24px;
+		left: 69px;
+	}
+
+	.social {
+		font-size: 20px;
+		float: right;
+		margin: 24px 64px 0 0;
+		color: @color2;
+		letter-spacing: 3px;
+
+		a {
+			@simpleLink();
+		}
+	
+		.adapt (xs, {
+			font-size: 30px;
+			text-shadow: 1px 1px 1px @color1;
+			float: none;
+			margin: 0;
+			position: absolute;
+			top: 5px;
+			left: 50px;
+		});
+	}
+
+	.welcome {
+		width: 270px;
+		height: 300px;
+		background-color: @color3;
+		top: 336px;
+		position: absolute;
+		padding: 82px 0 0 25px;
+		box-sizing: border-box;
+
+		.adapt (sm, {
+			top: 244px;
+		});
+
+		.adapt (xs, {
+			top: 60px;
+		});
+
+		p {
+			font-family: @font1;
+			font-size: 18px;
+			font-weight: bold;
+			line-height: 14px;
+			text-align: left;
+			color: @colorDark;
+			margin: 0;
+			padding: 0;
+		}
+
+		.welcomeToSurfhouse {
+			font-size: 30px;
+			line-height: 30px;
+			text-transform: uppercase;
+			margin: 0 0 23px 0;
+		}
+	}
+
+	.title {
+		position: absolute;
+		top: 244px;
+		right: 109px;
+		width: 313px;
+		height: 168px;
+		margin: 0;
+		padding: 0;
+
+		.adapt (xs, {
+			top: 380px;
+			left: 25px;
+		});
+
+		p {
+			padding: 0;
+			margin: 0;
+			text-align: left;
+			font-family: @font1;
+			font-size: 18px;
+			line-height: 24px;
+			color: @color3;
+		}
+
+		.funride {
+			font-size: 48px;
+			font-weight: 800;
+			line-height: 34px;
+			margin: 0 0 10px 0;
+		}
+	}
+
+	.button {
+		width: 124px;
+		height: 49px;
+		line-height: 49px;
+		background-color: @color3;
+		font-family: @font1;
+		font-size: 14px;
+		font-weight: 900;
+		text-align: center;
+		vertical-align: middle;
+		color: @color1;
+		text-transform: uppercase;
+		border: none;
+		position: absolute;
+		top: 474px;
+		right: 295px;
+
+		.adapt (xs, {
+			top: 568px;
+			left: 25px;
+		});
+
+		&:hover {
+			color: @color3;
+			background-color: @color1;
+		}
+	}
+}
+
+main {
+	.aside {
+		margin-top: -20px;
+
+		.adapt (xs, {
+			margin-top: 0;
+		});
+
+		nav {
+			background-color: #26d2fc;
+
+			ul {
+				padding: 0;
+				list-style: none;
+				font-family: @font2;
+				font-size: 14px;
+				font-weight: 900;
+				line-height: 36px;
+				text-align: left;
+				color: @color1;
+				display: flex;
+				margin: 0 auto;
+				flex-wrap: wrap;
+				flex-direction: column;
+
+				li {
+					padding: 0 0 0 40px;
+					height: 36px;
+					text-transform: uppercase;
+					box-sizing: border-box;
+					display: flex;
+					margin: auto 0;
+
+					&:first-of-type {
+						height: 66px;
+						background-color: @colorDark;
+						display: flex;
+						margin: auto 0;
+
+						a {
+							color: @color2;
+							line-height: 66px;
+						}
+					}
+
+					&:nth-child(n + 1):hover {
+						background-color: @colorDark;
+						color: @color2;
+
+						a {
+							color: @color2;
+						}
+					}
+
+					a {
+						text-decoration: none;
+						color: @color1;
+					}
+				}
+			}
+		}
+
+		.banner {
+			height: 300px;
+			background: url(../images/surfhouse-open.jpg) no-repeat;
+			background-size: cover;
+			position: relative;
+			margin: 30px 0 0 0;
+
+			.adapt(xs, {
+				margin: 20px 0 20px 0;
+			});
+
+			p {
+				margin: 0;
+				padding: 0;
+				width: 109px;
+				height: 97px;
+				font-family: @font1;
+				font-size: 36px;
+				font-weight: 900;
+				line-height: 36px;
+				text-align: left;
+				color: #221d1d;
+				text-transform: uppercase;
+				position: absolute;
+				top: 133px;
+				right: 19px;
+
+				.adapt(xs, {
+					text-shadow: 1px 1px 1px @color2;
+					margin-top: 0;
+				});
+			}
+		}
+	}
+
+	.content {
+		margin: -20px 0 0 0;
+		
+		.adapt(xs, {
+			margin: 0;
+		});
+		
+		.contentCaption {
+			font-family: @font2;
+			font-size: 22px;
+			font-weight: 900;
+			font-style: italic;
+			text-align: left;
+			color: #707070;
+			text-transform: uppercase;
+			background-color: #f8f8f8;
+			height: 80px;
+			line-height: 80px;
+			width: 100%;
+			margin: 0 0 15px;
+			padding: 0 0 0 15px;
+		}
+
+		.product {
+			.adapt(wxs, {
+				width: 50%;
+				float: left;
+			});
+
+			.catalogItem {
+				background-color: @color2;
+				margin-bottom: 30px;
+				position: relative;
+				padding: 10px 10px 0 10px;
+				border-radius: 5px;
+
+				&:hover {
+					box-shadow: 0 0 5px @colorDark;
+				}
+
+				img {
+					width: 100%;
+				}
+
+				.catalogItemName {
+					width: 70%;
+					height: 60px;
+					font-family: @font2;
+					font-size: 14px;
+					font-weight: 900;
+					font-style: italic;
+					color: @colorDark;
+					text-align: center;
+					line-height: 60px;
+					vertical-align: middle;
+					text-decoration: none;
+					float: left;
+				}
+
+				.catalogItemPrice {
+					width: 30%;
+					height: 60px;
+					font-family: @font2;
+					font-size: 18px;
+					font-weight: 900;
+					font-style: italic;
+					color: @colorDark;
+					text-align: center;
+					vertical-align: middle;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-wrap: wrap;
+
+					p {
+						margin: 0;
+						padding: 0;
+
+						span {
+							color: red;
+							text-decoration: line-through;
+						}
+					}
+				}
+			}
+		}
+
+		.newProductItems {
+			.product:nth-of-type(1) {
+				.catalogItem::after {
+					content: "new! ";
+					display: block;
+					width: 46px;
+					height: 46px;
+					position: absolute;
+					top: 0;
+					right: 0;
+					background: url(../images/corner-red.png) no-repeat;
+					z-index: 2;
+					font-family: @font3;
+					font-size: 9px;
+					text-align: right;
+					white-space: pre;
+					color: @color2;
+					text-transform: uppercase;
+					line-height: 28px;
+					font-weight: 900;
+				}
+			}
+		}
+
+		.newProductItems {
+			.product:nth-of-type(2) {
+				.catalogItem::after {
+					content: "hot! ";
+					display: block;
+					width: 46px;
+					height: 46px;
+					position: absolute;
+					top: 0;
+					right: 0;
+					background: url(../images/corner-yellow.png) no-repeat;
+					z-index: 2;
+					font-family: @font3;
+					font-size: 9px;
+					text-align: right;
+					white-space: pre;
+					color: @color1;
+					text-transform: uppercase;
+					line-height: 28px;
+					font-weight: 900;
+				}
+			}
+		}
+	}
+
+	.brand {
+		min-height: 160px;
+		background-color: @color2;
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+
+		.hiddenBrand {
+			.adapt(md, {
+				display: none;
+			});
+		}
+	}
+
+	.instafeed {
+		.feed {
+			height: 105px;
+			width: inherit;
+			font-family: @font2;
+			font-size: 22px;
+			font-weight: 900;
+			font-style: italic;
+			text-align: center;
+			vertical-align: baseline;
+			line-height: 105px;
+			color: @colorDark;
+			background: #d2f0ff;
+
+			i {
+				font-size: 35px;
+				vertical-align: middle;
+			}
+		}
+
+		.instaphoto {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			background: #d2f0ff;
+			padding: 0 0 60px 0;
+
+			.adapt(lg, {
+				justify-content: space-between;
+				margin: 0;
+			});
+
+			.adapt(xs, {
+				padding-bottom: 30px;
+			});
+
+			img {
+				width: 185px;
+				height: 185px;
+				box-sizing: border-box;
+				border: 7px solid @color2;
+				margin: 0 2px 4px;
+			}
+		}
+	}
+
+	.social-big {
+		display: flex;
+		justify-content: space-between;
+
+		.adapt(tiny, {
+			flex-direction: column;
+		});
+
+		a {
+			display: block;
+			width: calc(100%/3);
+			height: 150px;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 150px;
+			color: @color2;
+			font-size: 64px;
+
+			.adapt(tiny, {
+				width: 100%;
+			});
+
+			&:nth-child(1) {
+				background: #3b5997;
+			}
+
+			&:nth-child(2) {
+				background: #3fccfd;
+			}
+
+			&:nth-child(3) {
+				background: #cb2027;
+			}
+		}
+	}
+}
+
+footer {
+	background-color: #373737;
+
+	.footerTop {
+		min-height: 351px;
+		background-color: #373737;
+		position: relative;
+
+		a {
+			@simpleLink();
+
+			&:hover {
+				color: @color3;
+				text-decoration: none;
+			}
+		}
+		
+		.footerTopWrap {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			padding: 45px 0 0 0;
+
+			.adapt(xs, {
+				padding: 15px 0 0 0;
+			});
+		
+			.footerColumn {
+				min-height: 187px;
+				color: @color2;
+				font-family: @font2;
+				font-size: 12px;
+				display: inline-block;
+				margin: 10px 0 0 0;
+				padding: 0 5px;
+				box-sizing: border-box;
+				vertical-align: bottom;
+				line-height: 18px;
+
+				&:nth-child(1) {
+					margin: 10px 0 0 15px;
+				}
+
+				@media (max-width: 1199px) {
+					flex-grow: 1;
+				}
+
+				h1 {
+					font-family: @font1;
+					font-size: 18px;
+					font-weight: 800;
+					text-align: left;
+					color: @color2;
+				}
+
+				ul {
+					list-style: none;
+					margin: 0;
+					padding: 0;
+				}
+			}
+		
+			.newsletter {
+				position: relative;
+
+				input[type="email"] {
+					width: 180px;
+					height: 30px;
+					background: @color3;
+					border: none;
+					text-transform: uppercase;
+					padding: 0 0 0 21px;
+					box-sizing: border-box;
+					color: @color1;
+				}
+
+				input[type="submit"] {
+					width: 71px;
+					height: 30px;
+					background-color: @color1;
+					font-family: @font2;
+					font-size: 12px;
+					line-height: 21px;
+					text-transform: uppercase;
+					text-align: center;
+					color: @color2;
+					border: none;
+
+					&:hover {
+						color: @color3;
+					}
+				}
+
+				.paymentSystems {
+					position: absolute;
+					bottom: 5px;
+					font-size: 33px;
+				}
+			}
+
+			.aboutUs {
+				.adapt(lg, {
+					max-width: 237px;
+					margin: 5px 0 0 0;
+				});
+
+				p {
+					line-height: 12px;
+
+					span {
+						color: @color3;
+					}
+				}
+			}
+		}	
+	}
+	
+	.footerBottom {
+		background-color: @colorDark;
+
+		.footerBottomWrap {
+			min-height: 50px;
+			background-color: @colorDark;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+
+			.copyright {
+				font-family: @font2;
+				font-size: 12px;
+				line-height: 30px;
+				text-align: left;
+				color: #dad9d9;
+				margin: 0;
+			}
+
+			.footerSocial {
+				a {
+					color: @color2;
+					font-size: 15px;
+					letter-spacing: 3px;
+					line-height: 30px;
+					vertical-align: middle; 
+
+					&:hover {
+						@simpleLink();
+					}
+				}
+			}
+		}
+	}
+}
